@@ -1,0 +1,15 @@
+if TARGET_MARLIN
+
+config SYS_BOARD
+	default "marlin"
+
+config SYS_VENDOR
+	default "hp"
+
+config SYS_SOC
+	default "s3c24x0"
+
+config SYS_CONFIG_NAME
+	default "marlin"
+
+endif

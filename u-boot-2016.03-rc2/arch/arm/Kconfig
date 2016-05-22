@@ -28,6 +28,9 @@ config CPU_ARM946ES
 config CPU_ARM1136
         bool
 
+config CPU_THOR
+        bool
+
 config CPU_ARM1176
         bool
         select HAS_VBAR
@@ -58,6 +61,7 @@ config SYS_CPU
         default "armv7m" if CPU_V7M
         default "pxa" if CPU_PXA
         default "sa1100" if CPU_SA1100
+        default "thor"  if CPU_THOR
 	default "armv8" if ARM64
 
 config SEMIHOSTING
@@ -91,6 +95,10 @@ config TARGET_VCMA9
 config TARGET_SMDK2410
 	bool "Support smdk2410"
 	select CPU_ARM920T
+
+config TARGET_MARLIN
+    bool "Support marlin"
+    select CPU_THOR
 
 config TARGET_ASPENITE
 	bool "Support aspenite"
@@ -855,6 +863,7 @@ source "board/technologic/ts4800/Kconfig"
 source "board/vscom/baltos/Kconfig"
 source "board/woodburn/Kconfig"
 source "board/work-microwave/work_92105/Kconfig"
+source "board/hp/marlin/Kconfig"
 
 source "arch/arm/Kconfig.debug"
 
